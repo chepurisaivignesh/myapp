@@ -129,17 +129,17 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'app.customUser'
 
-# import os
+import os
 # # Base url to serve media files
 # MEDIA_URL = '/media/'
 # # Path where media is stored
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-AWS_ACCESS_KEY_ID = 'AKIAWLGZKWPCDOMUKTEU'
-AWS_SECRET_ACCESS_KEY ='2zKl+k33S0PCW9rzJLOUmkZDAaHv/0bJsbSv6VTJ'
-AWS_STORAGE_BUCKET_NAME = 'examplebucketbyvignesh'
-AWS_S3_REGION_NAME = 'ap-south-1'
-AWS_S3_FILE_OVERWRITE = False
-AWS_DEFAULT_ACL = None
-AWS_S3_VERIFY = True
+DEFAULT_FILE_STORAGE = os.environ['DEFAULT_FILE_STORAGE']
+AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
+AWS_SECRET_ACCESS_KEY =os.environ['AWS_SECRET_ACCESS_KEY']
+AWS_STORAGE_BUCKET_NAME = os.environ['AWS_STORAGE_BUCKET_NAME']
+AWS_S3_REGION_NAME = os.environ['AWS_S3_REGION_NAME']
+AWS_S3_FILE_OVERWRITE = os.environ['AWS_S3_FILE_OVERWRITE']
+AWS_DEFAULT_ACL = os.environ['AWS_DEFAULT_ACL']
+AWS_S3_VERIFY = os.environ['AWS_S3_VERIFY']
