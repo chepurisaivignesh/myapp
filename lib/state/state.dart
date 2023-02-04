@@ -19,8 +19,8 @@ class CustomState with ChangeNotifier {
     try {
       var token = storage.getItem('token');
       String url = specific
-          ? "http://10.0.2.2:8000/api/specificPosts/"
-          : "http://10.0.2.2:8000/api/posts/";
+          ? "http://chepurisaivignesh.pythonanywhere.com/api/specificPosts/"
+          : "http://chepurisaivignesh.pythonanywhere.com/api/posts/";
       http.Response response = await http
           .get(Uri.parse(url), headers: {'Authorization': 'token $token'});
       var data = json.decode(response.body) as List;
@@ -51,7 +51,7 @@ class CustomState with ChangeNotifier {
   Future<void> addLike(int id) async {
     try {
       var token = storage.getItem('token');
-      String url = 'http://10.0.2.2:8000/api/addLike/';
+      String url = 'http://chepurisaivignesh.pythonanywhere.com/api/addLike/';
       http.Response response = await http.post(
         Uri.parse(url),
         headers: {
@@ -77,7 +77,8 @@ class CustomState with ChangeNotifier {
   Future<void> addComment(int postId, commentText) async {
     try {
       var token = storage.getItem('token');
-      String url = 'http://10.0.2.2:8000/api/addComment/';
+      String url =
+          'http://chepurisaivignesh.pythonanywhere.com/api/addComment/';
       http.Response response = await http.post(
         Uri.parse(url),
         headers: {
@@ -100,7 +101,7 @@ class CustomState with ChangeNotifier {
 
   Future<bool> loginNow(String username, String password) async {
     try {
-      String url = 'http://10.0.2.2:8000/api/login/';
+      String url = 'http://chepurisaivignesh.pythonanywhere.com/api/login/';
       http.Response response = await http.post(
         Uri.parse(url),
         headers: {
@@ -126,7 +127,7 @@ class CustomState with ChangeNotifier {
   Future<void> addPost(String issueDescription, String imageUrl) async {
     try {
       var token = storage.getItem('token');
-      String url = 'http://10.0.2.2:8000/api/addPost/';
+      String url = 'http://chepurisaivignesh.pythonanywhere.com/api/addPost/';
       http.Response response = await http.post(
         Uri.parse(url),
         body: json.encode(
@@ -150,7 +151,8 @@ class CustomState with ChangeNotifier {
   Future<User> getCurrentUser() async {
     try {
       var token = storage.getItem('token');
-      String url = 'http://10.0.2.2:8000/api/getCurrentUser/';
+      String url =
+          'http://chepurisaivignesh.pythonanywhere.com/api/getCurrentUser/';
       http.Response response = await http.get(
         Uri.parse(url),
         headers: {
@@ -189,7 +191,7 @@ class CustomState with ChangeNotifier {
   Future<bool> getClubsData() async {
     try {
       var token = storage.getItem('token');
-      var url = "http://10.0.2.2:8000/api/getClubs/";
+      var url = "http://chepurisaivignesh.pythonanywhere.com/api/getClubs/";
       http.Response response = await http
           .get(Uri.parse(url), headers: {'Authorization': 'token $token'});
       print(response.body);
@@ -224,7 +226,7 @@ class CustomState with ChangeNotifier {
   Future<bool> getEventsData() async {
     try {
       var token = storage.getItem('token');
-      var url = "http://10.0.2.2:8000/api/getEvents/";
+      var url = "http://chepurisaivignesh.pythonanywhere.com/api/getEvents/";
       http.Response response = await http
           .get(Uri.parse(url), headers: {'Authorization': 'token $token'});
       // print(response.body);
@@ -260,7 +262,7 @@ class CustomState with ChangeNotifier {
       DateTime dateOfEvent, String imageUrl) async {
     try {
       var token = storage.getItem('token');
-      String url = 'http://10.0.2.2:8000/api/addEvent/';
+      String url = 'http://chepurisaivignesh.pythonanywhere.com/api/addEvent/';
       http.Response response = await http.post(
         Uri.parse(url),
         body: json.encode(
@@ -290,7 +292,7 @@ class CustomState with ChangeNotifier {
   Future<bool> getLFItemsData() async {
     try {
       var token = storage.getItem('token');
-      var url = "http://10.0.2.2:8000/api/getLFitems/";
+      var url = "http://chepurisaivignesh.pythonanywhere.com/api/getLFitems/";
       http.Response response = await http
           .get(Uri.parse(url), headers: {'Authorization': 'token $token'});
       print(response.body);
@@ -326,7 +328,7 @@ class CustomState with ChangeNotifier {
       String imageUrl, String location) async {
     try {
       var token = storage.getItem('token');
-      String url = 'http://10.0.2.2:8000/api/addLFitem/';
+      String url = 'http://chepurisaivignesh.pythonanywhere.com/api/addLFitem/';
       http.Response response = await http.post(
         Uri.parse(url),
         body: json.encode(
@@ -358,7 +360,8 @@ class CustomState with ChangeNotifier {
   ) async {
     try {
       var token = storage.getItem('token');
-      String url = 'http://10.0.2.2:8000/api/deletePost/';
+      String url =
+          'http://chepurisaivignesh.pythonanywhere.com/api/deletePost/';
       http.Response response = await http.post(
         Uri.parse(url),
         body: json.encode(
@@ -387,7 +390,8 @@ class CustomState with ChangeNotifier {
       String profilePicture) async {
     try {
       var token = storage.getItem('token');
-      String url = 'http://10.0.2.2:8000/api/updateUser/';
+      String url =
+          'http://chepurisaivignesh.pythonanywhere.com/api/updateUser/';
       http.Response response = await http.post(
         Uri.parse(url),
         body: json.encode(
@@ -421,7 +425,8 @@ class CustomState with ChangeNotifier {
   ) async {
     try {
       var token = storage.getItem('token');
-      String url = 'http://10.0.2.2:8000/api/deleteLFitem/';
+      String url =
+          'http://chepurisaivignesh.pythonanywhere.com/api/deleteLFitem/';
       http.Response response = await http.post(
         Uri.parse(url),
         body: json.encode(
@@ -449,7 +454,7 @@ class CustomState with ChangeNotifier {
   Future<bool> getIssuesData() async {
     try {
       var token = storage.getItem('token');
-      String url = "http://10.0.2.2:8000/api/getIssues/";
+      String url = "http://chepurisaivignesh.pythonanywhere.com/api/getIssues/";
       http.Response response = await http
           .get(Uri.parse(url), headers: {'Authorization': 'token $token'});
       var data = json.decode(response.body) as List;
@@ -480,7 +485,8 @@ class CustomState with ChangeNotifier {
   Future<void> addSupportReaction(int id) async {
     try {
       var token = storage.getItem('token');
-      String url = 'http://10.0.2.2:8000/api/showSupport/';
+      String url =
+          'http://chepurisaivignesh.pythonanywhere.com/api/showSupport/';
       http.Response response = await http.post(
         Uri.parse(url),
         headers: {
@@ -506,7 +512,7 @@ class CustomState with ChangeNotifier {
   Future<void> addIssue(String issueDescription, String imageUrl) async {
     try {
       var token = storage.getItem('token');
-      String url = 'http://10.0.2.2:8000/api/addIssue/';
+      String url = 'http://chepurisaivignesh.pythonanywhere.com/api/addIssue/';
       http.Response response = await http.post(
         Uri.parse(url),
         body: json.encode(
@@ -532,7 +538,8 @@ class CustomState with ChangeNotifier {
   ) async {
     try {
       var token = storage.getItem('token');
-      String url = 'http://10.0.2.2:8000/api/deleteIssueItem/';
+      String url =
+          'http://chepurisaivignesh.pythonanywhere.com/api/deleteIssueItem/';
       http.Response response = await http.post(
         Uri.parse(url),
         body: json.encode(
