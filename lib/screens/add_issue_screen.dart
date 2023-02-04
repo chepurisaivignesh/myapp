@@ -64,7 +64,7 @@ class _AddIssueScreenState extends State<AddIssueScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Add Post"),
+        title: Text("Raise an Issue"),
       ),
       body: SingleChildScrollView(
         child: Form(

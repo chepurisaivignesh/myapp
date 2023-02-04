@@ -63,7 +63,7 @@ class _AddLFScreenState extends State<AddLFScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Add Post"),
+        title: Text("Add"),
       ),
       body: SingleChildScrollView(
         child: Form(

@@ -74,7 +74,7 @@ class _LFScreenState extends State<LFScreen> {
           )
         : Scaffold(
             appBar: AppBar(
-              title: Text("Welcome"),
+              title: Text("Lost And Found"),
               actions: [
                 IconButton(
                     onPressed: () => Navigator.of(context).pushReplacement(
